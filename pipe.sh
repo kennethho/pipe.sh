@@ -2,18 +2,16 @@
 
 pipe () {
   local -A __pipe_rsvd_id=(
-    [__pipe_rsvd_id]=1
-        [__pipe_funcname]=1
-         [__pipe_usage]=1
-           [__pipe_doc]=1
-             [__pipe_x]=1
+     [__pipe_rsvd_id]=1
+    [__pipe_funcname]=1
+       [__pipe_usage]=1
+         [__pipe_doc]=1
+           [__pipe_x]=1
   )
   local -- "${!__pipe_rsvd_id[@]}"
 
   local __pipe_funcname="$FUNCNAME"
   local __pipe_usage=(
-    #"usage: ${__pipe_funcname} [--] <pipefd>"
-    #"       ${__pipe_funcname} [--] <rdfd> <wrfd>"
     "usage: source ${BASH_SOURCE##*/}"
     "       ${__pipe_funcname} [--] PIPEFD"
     "       ${__pipe_funcname} [--] READFD WRITEFD"
@@ -32,29 +30,24 @@ pipe () {
 \fBpipe.sh\fR \- create pipe in \fBbash\fR(1)
 .
 .SH "SYNOPSIS"
+.nf
 \fBsource pipe.sh\fR
-.SY pipe
-.I PIPEFD
-.YS
-.SY pipe
-.I READFD
-.I WRITEFD
-.YS
+\fBpipe\fR \fIPIPEFD\fR
+\fBpipe\fR \fIREADFD\fR \fIWRITEFD\fR
+.fi
 .
 .SH "DESCRIPTION"
 \fBpipe\fR is a \fBbash\fR(1) function that creates anonymous pipe, it is like \fBpipe\fR(2) for \fBbash\fR(1)\. As with \fBpipe\fR(2), \fIPIPEFD\fR is user-supplied name of an array that is used to return two file descriptors referring to the ends of the pipe\. Where the read end is stored at index \fB0\fR, and the write end at index \fB1\fR\. Alternatively, user can supply two names to return ends of the pipe.
 .
 .SH "EXAMPLE"
 .
-.
 .nf
-
 $ ### in a bash prompt ###
-$ source pipe.sh
-$ pipe r w
-$ echo hello >&${w}
-$ exec {w}>&-
-$ cat <&${r}   #### output follows ###
+$ \fBsource pipe.sh\fR
+$ \fBpipe r w\fR
+$ \fBecho\fB \fIhello\fB >&${w}\fR
+$ \fBexec {w}>&-\fR
+$ \fBcat <&${r}\fR   #### output follows ###
 hello
 .fi
 __EOF__
