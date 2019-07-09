@@ -8,7 +8,6 @@ pipe for bash
 <strong>SYNOPSIS</strong>
        <strong>source</strong> <strong>pipe.sh</strong>
        <strong>pipe</strong> <em>PIPEFD</em>
-
        <strong>pipe</strong> <em>READFD</em> <em>WRITEFD</em>
 
 <strong>DESCRIPTION</strong>
