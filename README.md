@@ -11,8 +11,8 @@ pipe for bash
        <strong>source</strong> <strong>pipe.sh</strong> [<strong>--</strong>] <em>READER WRITER</em>
 
 <strong>DESCRIPTION</strong>
-       Resembling <strong>pipe</strong>(2), <strong>pipe.sh</strong> creates pipe. Argument <em>PIPEFD</em> is
-       user-supplied name of an array that is used to return two file
+       Resembling <strong>pipe</strong>(2), <strong>pipe.sh</strong> creates pipe. Argument <em>PIPEFD</em> is user-
+       supplied name of an array that is used to return two file
        descriptors referring to the ends of created pipe, the read end at
        index <strong>0</strong> and the write end at index <strong>1</strong>. Alternatively, two names (
        argument <em>READER</em> and <em>WRITER</em>) can be supplied to return the ends of
@@ -44,7 +44,8 @@ pipe for bash
        $
 
 <strong>NOTES</strong>
-       Other than one command to <strong>tail</strong>(1), pipe creation in pipe.sh in made is pure <strong>bash</strong>.
+       Other than one command to <strong>tail</strong>(1), pipe creation in <strong>pipe.sh</strong> in made
+       is pure <strong>bash</strong>.
        
 <strong>REPORTING BUS</strong>
        <a href="https://github.com/kennethho/pipe.sh/issues">https://github.com/kennethho/pipe.sh/issues</a>
